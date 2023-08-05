@@ -4,13 +4,13 @@
       <img src="https://cdn-icons-png.flaticon.com/512/9256/9256463.png"/>
       <span class="title">Bienvenue chez nous !</span>
     </div>
-    <form [formGroup]="form" class="content" (ngSubmit)="addContact()">
+    <form [formGroup]="form" class="content" (ngSubmit)="register()">
       <mat-form-field appearance="outline">
         <mat-label>Prénom</mat-label>
         <input matInput placeholder="ex: Doe" formControlName="firstname"/>
         <mat-error *ngIf="form.controls.firstname.errors?.['required']">Veuillez compléter ce champ.</mat-error>
       </mat-form-field>
-      
+
       <mat-form-field appearance="outline">
         <mat-label>Nom</mat-label>
         <input matInput placeholder="ex: John" formControlName="lastname"/>

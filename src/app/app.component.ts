@@ -22,7 +22,7 @@ export class AppComponent {
     job: ['', [Validators.required]],
   });
 
-  addContact() {
+  register() {
     this.form.markAllAsTouched();
     if (!this.form.valid) return;
     console.log(`Inscription réussie ! 🎉`)
