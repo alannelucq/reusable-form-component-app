@@ -4,11 +4,12 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { InputComponent } from "./shared/components/input/input.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatSnackBarModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, ReactiveFormsModule, MatSnackBarModule, InputComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })

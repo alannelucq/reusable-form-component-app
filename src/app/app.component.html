@@ -5,40 +5,14 @@
       <span class="title">Bienvenue chez nous !</span>
     </div>
     <form [formGroup]="form" class="content" (ngSubmit)="register()">
-      <mat-form-field appearance="outline">
-        <mat-label>Prénom</mat-label>
-        <input matInput placeholder="ex: Doe" formControlName="firstname"/>
-        <mat-error *ngIf="form.controls.firstname.errors?.['required']">Veuillez compléter ce champ.</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Nom</mat-label>
-        <input matInput placeholder="ex: John" formControlName="lastname"/>
-        <mat-error *ngIf="form.controls.lastname.errors?.['required']">Veuillez compléter ce champ.</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Société</mat-label>
-        <input matInput placeholder="ex: Incognito Company" formControlName="company"/>
-        <mat-error *ngIf="form.controls.company.errors?.['required']">Veuillez compléter ce champ.</mat-error>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="ex: john.doe@mail.fr" formControlName="email"/>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Téléphone</mat-label>
-        <input matInput placeholder="ex: 06 01 02 03 04" formControlName="phone"/>
-      </mat-form-field>
-
-      <mat-form-field appearance="outline">
-        <mat-label>Métier</mat-label>
-        <input matInput placeholder="CTO" formControlName="job"/>
-        <mat-error *ngIf="form.controls.job.errors?.['required']">Veuillez compléter ce champ.</mat-error>
-      </mat-form-field>
-
+      <div class="row">
+        <app-input id="firstname" label="Prénom" placeholder="ex: John" formControlName="firstname"/>
+        <app-input id="lastname" label="Nom" placeholder="ex: Doe" formControlName="lastname"/>
+      </div>
+      <app-input id="company" label="Société" placeholder="ex: Incognito Company" formControlName="company"/>
+      <app-input id="email" label="Email" placeholder="ex: john.doe@gmail.fr" formControlName="email"/>
+      <app-input id="phone" label="Téléphone" placeholder="ex: 06 01 02 03 04" formControlName="phone"/>
+      <app-input id="job" label="Métier" placeholder="ex: CTO" formControlName="job"/>
       <button class="primary">S'inscrire</button>
     </form>
   </div>
