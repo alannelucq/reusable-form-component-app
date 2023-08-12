@@ -31,4 +31,17 @@
       }
     }
   }
+
+  .error-container {
+    margin-top: 4px;
+    height: 15px;
+  }
+
+  &.ng-untouched.ng-invalid .error-container app-error {
+    display: none;
+  }
+
+  &.ng-touched.ng-invalid input {
+    border: 2px solid #f87171;
+  }
 }
