@@ -9,7 +9,12 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from "@angular/f
   template: `
     <div class="container">
       <label [for]="id"> {{ label }}</label>
-      <input [id]="id" [placeholder]="placeholder" [ngModel]="value" (ngModelChange)="writeValue($event)"/>
+      <input
+        #input [id]="id"
+        [placeholder]="placeholder" [value]="value"
+        (focusout)="onTouch()"
+        (input)="onChange(input.value)"
+      />
     </div>
   `,
   providers: [
@@ -30,7 +35,7 @@ export class InputComponent implements ControlValueAccessor {
 
   onChange = (value: string) => {
   }
-  onTouch = (value: string) => {
+  onTouch = () => {
   }
 
   registerOnChange(fn: any): void {
@@ -43,7 +48,5 @@ export class InputComponent implements ControlValueAccessor {
 
   writeValue(value: string): void {
     this.value = value;
-    this.onChange(value);
-    this.onTouch(value);
   }
 }
