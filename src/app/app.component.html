@@ -6,14 +6,24 @@
     </div>
     <form [formGroup]="form" class="content" (ngSubmit)="register()">
       <div class="row">
-        <app-input id="firstname" label="Prénom" placeholder="ex: John" formControlName="firstname"/>
-        <app-input id="lastname" label="Nom" placeholder="ex: Doe" formControlName="lastname"/>
+        <app-input id="firstname" label="Prénom" placeholder="ex: John" formControlName="firstname">
+          <app-error *ngIf="form.controls.firstname.errors?.['required']">Veuillez renseigner ce champ</app-error>
+        </app-input>
+        <app-input id="lastname" label="Nom" placeholder="ex: Doe" formControlName="lastname">
+          <app-error *ngIf="form.controls.lastname.errors?.['required']">Veuillez renseigner ce champ</app-error>
+        </app-input>
       </div>
-      <app-input id="company" label="Société" placeholder="ex: Incognito Company" formControlName="company"/>
-      <app-input id="email" label="Email" placeholder="ex: john.doe@gmail.fr" formControlName="email"/>
+      <app-input id="company" label="Société" placeholder="ex: Incognito Company" formControlName="company">
+        <app-error *ngIf="form.controls.company.errors?.['required']">Veuillez renseigner ce champ</app-error>
+      </app-input>
+      <app-input id="email" label="Email" placeholder="ex: john.doe@gmail.fr" formControlName="email">
+        <app-error *ngIf="form.controls.email.errors?.['email']">Veuillez renseigner un email valide</app-error>
+      </app-input>
       <app-input id="phone" label="Téléphone" placeholder="ex: 06 01 02 03 04" formControlName="phone"/>
-      <app-input id="job" label="Métier" placeholder="ex: CTO" formControlName="job"/>
-      <button class="primary">S'inscrire</button>
+      <app-input id="job" label="Métier" placeholder="ex: CTO" formControlName="job">
+        <app-error *ngIf="form.controls.job.errors?.['required']">Veuillez renseigner ce champ</app-error>
+      </app-input>
+      <button type="submit" class="primary">Ajouter</button>
     </form>
   </div>
 </div>
